@@ -25,6 +25,7 @@ RUN apt-get update \
 
 COPY . /docker-registry
 COPY ./config/boto.cfg /etc/boto.cfg
+COPY ./ssl/screwdriver.chain.crt /etc/docker/certs.d/dr.screwdriver.cc/ca.crt
 
 # Install core
 RUN pip install /docker-registry/depends/docker-registry-core
